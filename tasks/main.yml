@@ -2,3 +2,5 @@
 - include: dependencies.yml
 - include: ubuntu_td-agent.yml
   when: ansible_distribution == "Ubuntu"
+- include: redhat_td-agent.yml
+  when: ansible_os_family == "RedHat"
