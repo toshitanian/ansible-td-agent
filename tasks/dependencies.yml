@@ -1,0 +1,7 @@
+---
+
+- name: install dependencies...
+  apt: name={{ item }} state=installed update_cache=yes
+  with_items:
+    - python-pycurl
+  when: ansible_os_family == 'Debian'

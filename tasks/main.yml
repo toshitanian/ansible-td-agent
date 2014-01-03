@@ -1,0 +1,4 @@
+---
+- include: dependencies.yml
+- include: ubuntu_td-agent.yml
+  when: ansible_distribution == "Ubuntu"

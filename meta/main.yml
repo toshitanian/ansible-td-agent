@@ -1,0 +1,14 @@
+---
+galaxy_info:
+  author: Toshiya Kawasaki
+  description: Install td-agent
+  license: BSD
+  min_ansible_version: 1.4
+  platforms:
+    - name: Ubuntu
+      versions:
+        - precise
+        - lucid
+  categories:
+    - monitoring
+dependencies: []
