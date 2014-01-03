@@ -1,15 +1,19 @@
 ---
 
+- name: install dependencies...
+  apt: name={{ item }} state=installed update_cache=yes
+  with_items:
+    - python-pycurl
+
 - name: Add apt repository
   apt_repository: repo='deb http://packages.treasure-data.com/precise/ precise contrib' state=present
-  when: ansible_distribution == "Ubuntu" and ansible_distribution_version == '12.04'
+  when: ansible_distribution_version == '12.04'
 
 - name: Add apt repository
   apt_repository: repo='deb http://packages.treasure-data.com/debian/ lucid contrib' state=present
-  when: ansible_distribution == "Ubuntu" and ansible_distribution_version == '10.04'
+  when: ansible_distribution_version == '10.04'
 
 - name: apt-get td-agent
   apt: name=td-agent update_cache=yes force=yes
-  when: ansible_distribution == "Ubuntu" and ansible_distribution_version in ['10.04', '12.04']
   notify:
     - restart td-agent
