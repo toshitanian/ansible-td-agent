@@ -7,4 +7,3 @@
   yum: name=td-agent state=latest
   notify:
     - restart td-agent
-

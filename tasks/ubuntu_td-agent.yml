@@ -13,4 +13,3 @@
   when: ansible_distribution == "Ubuntu" and ansible_distribution_version in ['10.04', '12.04']
   notify:
     - restart td-agent
-
