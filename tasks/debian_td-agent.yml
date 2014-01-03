@@ -1,7 +1,9 @@
 ---
+
 - name: install td-agent dependencies...
   apt: name={{ item }} state=installed update_cache=yes
   with_items:
+    - python-pycurl
     - libxslt1.1
     - libyaml-0-2
 
