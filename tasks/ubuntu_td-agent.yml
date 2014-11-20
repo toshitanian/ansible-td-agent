@@ -10,11 +10,11 @@
   when: ansible_distribution_version == '14.04'
 
 - name: Add apt repository
-  apt_repository: repo='deb http://packages.treasure-data.com/precise/ precise contrib' state=present
+  apt_repository: repo='deb http://packages.treasuredata.com/2/ubuntu/precise/ precise contrib' state=present
   when: ansible_distribution_version == '12.04'
 
 - name: Add apt repository
-  apt_repository: repo='deb http://packages.treasure-data.com/debian/ lucid contrib' state=present
+  apt_repository: repo='deb http://packages.treasuredata.com/2/ubuntu/lucid/ contrib' state=present
   when: ansible_distribution_version == '10.04'
 
 - name: apt-get td-agent
