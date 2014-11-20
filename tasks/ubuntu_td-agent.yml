@@ -6,6 +6,10 @@
     - python-pycurl
 
 - name: Add apt repository
+  apt_repository: repo='deb http://packages.treasuredata.com/2/ubuntu/trusty/ trusty contrib' state=present
+  when: ansible_distribution_version == '14.04'
+
+- name: Add apt repository
   apt_repository: repo='deb http://packages.treasure-data.com/precise/ precise contrib' state=present
   when: ansible_distribution_version == '12.04'
 
