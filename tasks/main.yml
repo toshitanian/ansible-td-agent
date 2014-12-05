@@ -8,7 +8,7 @@
   when: ansible_os_family == "RedHat"
 
 - include: ubuntu_td-agent.yml
-  when: ansible_distribution == "Ubuntu" and ansible_distribution_version in ['10.04', '12.04']
+  when: ansible_distribution == "Ubuntu" and ansible_distribution_version in ['10.04', '12.04', '14.04']
 
 - include: debian_td-agent.yml
   when: ansible_distribution == "Debian" and ansible_distribution_version[0] == '6'
