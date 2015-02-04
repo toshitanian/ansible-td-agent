@@ -5,6 +5,9 @@
   with_items:
     - python-pycurl
 
+- name: Add the Treasuredata apt key
+  apt_key: url=http://packages.treasuredata.com/GPG-KEY-td-agent state=present
+
 - name: Add apt repository
   apt_repository: repo='deb http://packages.treasuredata.com/2/ubuntu/trusty/ trusty contrib' state=present
   when: ansible_distribution_version == '14.04'
