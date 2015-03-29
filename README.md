@@ -18,6 +18,12 @@ The variables that can be passed to this role **when the OS is Debian** and a br
     # Architecture of the machine (required, i386 or amd64)
     td_agent_architecture: amd64
 
+You can also pass in a list of plugins to be installed using tg-agent-gem as follows:
+
+    td_agent_plugins:
+    - 'fluent-plugin-secure-forward'
+    - 'fluent-plugin-...'
+
 Detail for [the official intallation page](http://docs.fluentd.org/articles/install-by-deb)
 
 ## Examples
