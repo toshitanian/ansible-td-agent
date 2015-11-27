@@ -1,6 +1,8 @@
 ---
 - name: Check if plugins are installed
   command: "td-agent-gem list -i {{item}}"
+  environment:
+    PATH: /usr/sbin:{{ ansible_env.PATH }}
   with_items: td_agent_plugins
   changed_when: False
   failed_when: False
@@ -8,6 +10,8 @@
 
 - name: Install missing plugins
   command: "td-agent-gem install {{item.item}}"
+  environment:
+    PATH: /usr/sbin:{{ ansible_env.PATH }}
   with_items: td_plugin_status.results
   when: (td_plugin_status.results is defined) and
         (item.stdout_lines[0] == "false")
